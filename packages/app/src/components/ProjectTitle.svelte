@@ -57,24 +57,23 @@ const isActivePage = $page.url.pathname === `/projects/${project.slug}`;
 					<Arrow />
 				</a>
 				<div class="flex w-full flex-col items-center pb-12">
-					<div
-						class="project-title-component projects-list-item group flex w-full flex-col items-center px-28 transition-colors duration-300"
-					>
-						<h3
-							class="text-wrap text-center text-3xl transition-colors duration-300 group-hover:text-white sm:text-[3rem] sm:leading-[4.5rem]"
-							style={`view-transition-name: title-${project.slug}`}
+					{#if ready}
+						<div
+							class="project-title-component projects-list-item group flex w-full flex-col items-center px-28 transition-colors duration-300"
+							in:fly={{ y: 50, easing: cubicOut, delay: 300 }}
 						>
-							{project.name}
-						</h3>
-						{#if ready}
+							<h3
+								class="text-wrap text-center text-3xl transition-colors duration-300 group-hover:text-white sm:text-[3rem] sm:leading-[4.5rem]"
+							>
+								{project.name}
+							</h3>
 							<span
 								class="text-md mt-2 px-2 text-center font-['Space_Mono'] font-bold text-white sm:mt-0 sm:text-lg"
-								in:fly={{ y: 50, easing: cubicOut, delay: 300 }}
 							>
 								{getDateRange()}
 							</span>
-						{/if}
-					</div>
+						</div>
+					{/if}
 				</div>
 			</div>
 		{:else}
@@ -105,7 +104,6 @@ const isActivePage = $page.url.pathname === `/projects/${project.slug}`;
 						</span>
 						<h3
 							class="w-full text-center text-2xl leading-7 transition-colors duration-300 group-hover:text-white sm:line-clamp-1 sm:w-auto sm:text-left sm:text-[3rem] sm:leading-[4.5rem]"
-							style={`view-transition-name: title-${project.slug}`}
 						>
 							{project.name}
 						</h3>
