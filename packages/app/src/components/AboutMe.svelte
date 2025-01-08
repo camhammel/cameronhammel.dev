@@ -90,7 +90,7 @@ let coords = spring(
 				</p>
 			</div>
 			<div
-				class="my-4 aspect-square max-w-32 overflow-clip rounded-full border-2 border-solid border-white text-center font-medium text-white shadow-sm sm:my-0 sm:max-w-64 sm:text-lg"
+				class="my-4 aspect-square max-w-32 overflow-clip rounded-full border-2 border-solid border-white bg-white text-center font-medium text-white shadow-sm sm:my-0 sm:max-w-64 sm:text-lg"
 			>
 				{#if profileImage}
 					<img
