@@ -60,6 +60,10 @@ $: intersectionElements = Object.entries(
 							/>
 							<a
 								href={`#${id}`}
+								on:click={(e) => {
+									e.preventDefault();
+									document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+								}}
 								class="link text-sm text-slate-400 transition-colors duration-300"
 								style="color: {intersecting ? 'rgb(var(--color-primary))' : ''}">{title}</a
 							>
