@@ -2,4 +2,4 @@
 export const portableText = null;
 </script>
 
-<strong class="text-primary bg-white text-lg"><slot /></strong>
+<strong class="text-primary bg-white px-1 text-lg"><slot /></strong>
