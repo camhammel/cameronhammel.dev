@@ -1,6 +1,5 @@
 import { sveltekit } from '@sveltejs/kit/vite';
 import Components from 'unplugin-svelte-components/vite';
-import { FontaineTransform } from "fontaine";
 import { defineConfig } from 'vite';
 
 export default defineConfig({
@@ -16,6 +15,5 @@ export default defineConfig({
 			]
 		}),
 		sveltekit(),
-		FontaineTransform.vite({ fallbacks: ["Arial", "Roboto"] }),
 	]
 });
