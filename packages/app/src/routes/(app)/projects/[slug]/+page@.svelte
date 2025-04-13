@@ -2,15 +2,17 @@
 import { onMount } from 'svelte';
 import { fade, fly } from 'svelte/transition';
 import IntersectionObserver from 'svelte-intersection-observer';
+import SvelteSeo from 'svelte-seo';
 
 import ProjectTitle from '../../../../components/ProjectTitle.svelte';
 import ProjectSection from '../../../../components/ProjectSection.svelte';
 
-import { urlFor } from '$lib/sanity/client';
+import { getImageProps } from '$lib/sanity/client';
 import ProjectTechStack from '../../../../components/ProjectTechStack.svelte';
 import { cubicOut } from 'svelte/easing';
 import ProjectSidebar from '../../../../components/ProjectSidebar.svelte';
 import type { RgbaColor } from 'studio';
+import type { SanityImageObject } from '@sanity/image-url/lib/types/types';
 
 let ready = false;
 
@@ -20,6 +22,10 @@ onMount(() => {
 
 export let data;
 $: ({ project } = data);
+
+$: bannerImageProps = project?.hero_banner?.asset?._ref
+	? getImageProps({ image: project.hero_banner as SanityImageObject, maxWidth: '100vw' })
+	: null;
 
 const defaultBlack = { r: 0, g: 0, b: 0 };
 
@@ -74,6 +80,7 @@ $: projectIntersectionElements = Object.assign(
 			}, {})
 	)
 );
+let loaded = false;
 </script>
 
 <div
@@ -93,10 +100,14 @@ $: projectIntersectionElements = Object.assign(
 					{#if project.hero_banner}
 						<div class="flex flex-row justify-center">
 							<img
-								src={urlFor(project.hero_banner)?.auto('format').url()}
+								style="height: auto; width: 100%;"
+								fetchpriority="high"
+								loading="eager"
 								class="rounded-2xl"
 								alt="Hero Banner"
-								width="100%"
+								data-loaded={loaded}
+								on:load={() => loaded = true}
+								{...bannerImageProps}
 							/>
 						</div>
 					{/if}
@@ -113,7 +124,9 @@ $: projectIntersectionElements = Object.assign(
 							</div>
 						</IntersectionObserver>
 						<div class="m-4 grid grid-cols-4 gap-4">
-							<div class="col-span-4 rounded-md bg-[#fff] px-8 py-4 sm:col-span-3">
+							<div
+								class="col-span-4 flex flex-col gap-8 rounded-md bg-[#fff] px-8 py-4 sm:col-span-3"
+							>
 								{#if project.sections?.length}
 									{#each project.sections as section, index}
 										<IntersectionObserver
@@ -147,3 +160,12 @@ $: projectIntersectionElements = Object.assign(
 		/>
 	{/if}
 </div>
+
+<style>
+img {
+	transition: 0.15s opacity;
+}
+img[data-loaded='false'] {
+	opacity: 0;
+}
+</style>

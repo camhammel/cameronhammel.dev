@@ -54,10 +54,11 @@ $: flyOptions = {
 						class:sm:justify-start={section?.image_placement === 'right'}
 					>
 						<img
-							class="max-w-[70%] rounded-md"
+							loading="lazy"
+							class="max-w-[80%] rounded-md object-contain"
 							src={urlFor(section.image)?.width(768).auto('format').url()}
 							alt="Project Section"
-							width="70%"
+							width="80%"
 						/>
 					</div>
 				{/if}
