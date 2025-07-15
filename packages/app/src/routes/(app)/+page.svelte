@@ -63,7 +63,7 @@ $: quotes = (data.projects?.flatMap((project) => project.quotes) ?? []).filter(B
 			</h2>
 			<ul class="w-full columns-1 gap-4 sm:columns-2">
 				{#each quotes as quote}
-					<li class="mx-auto mb-4 h-full w-full">
+					<li class="mb-4 inline-block w-full">
 						<Testimonial quote={quote} />
 					</li>
 				{/each}
