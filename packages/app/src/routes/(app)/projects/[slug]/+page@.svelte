@@ -84,7 +84,7 @@ let loaded = false;
 </script>
 
 <div
-	class="project-details relative flex max-w-full flex-col overflow-visible bg-white dark:bg-gray-900"
+	class="project-details relative flex max-w-full flex-col overflow-visible bg-gray-100 dark:bg-gray-800"
 	style="--color-primary: {colourset.main.rgb}; --color-primary-light: {colourset.light
 		.rgb}; --color-primary-lighter: {colourset.lighter.rgb}; --color-primary-dark: {colourset.dark
 		.rgb};"
@@ -93,7 +93,7 @@ let loaded = false;
 		<ProjectTitle project={project} />
 		{#if ready}
 			<div
-				class="relative bottom-12 z-10 -mb-12 flex-1 gap-4 rounded-3xl bg-white dark:bg-gray-800 p-4"
+				class="relative bottom-12 z-10 -mb-12 flex-1 gap-4 rounded-3xl bg-gray-100 dark:bg-gray-800 p-4"
 				transition:fly={{ duration: 750, delay: 200, y: 200, easing: cubicOut, opacity: 1 }}
 			>
 				<div class="col-span-3 mx-auto max-w-screen-2xl">
