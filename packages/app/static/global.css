@@ -49,14 +49,65 @@
 
 	--max-width-0: 320px;
 	--max-width-1: 768px;
+
+	/* Light mode colors */
+	--bg-primary: #fff;
+	--bg-secondary: #f8f9fa;
+	--text-primary: #101112;
+	--text-secondary: #6e7683;
+	--border-color: #ced2d9;
+}
+
+/* Dark mode colors */
+:root[class~="dark"] {
+	--bg-primary: #0f1419;
+	--bg-secondary: #1a1f2e;
+	--text-primary: #e6edf3;
+	--text-secondary: #8b949e;
+	--border-color: #30363d;
+}
+
+/* Dark mode link styles */
+:root[class~="dark"] .link {
+	color: #60a5fa;
+}
+
+:root[class~="dark"] .link:hover {
+	color: #93c5fd;
+}
+
+/* Dark mode text selection */
+:root[class~="dark"] ::selection {
+	background-color: #3b82f6;
+	color: #ffffff;
+}
+
+/* Dark mode scrollbar */
+:root[class~="dark"] ::-webkit-scrollbar {
+	width: 8px;
+}
+
+:root[class~="dark"] ::-webkit-scrollbar-track {
+	background: #1f2937;
+}
+
+:root[class~="dark"] ::-webkit-scrollbar-thumb {
+	background: #4b5563;
+	border-radius: 4px;
+}
+
+:root[class~="dark"] ::-webkit-scrollbar-thumb:hover {
+	background: #6b7280;
 }
 
 html {
-	background-color: rgb(var(--white));
+	background-color: var(--bg-primary);
+	color: var(--text-primary);
 	font-family: var(--font-family-sans), var(--font-family-serif), sans-serif;
 	-webkit-text-size-adjust: 100%;
 	-moz-text-size-adjust: 100%;
 	text-size-adjust: 100%;
+	transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 body {

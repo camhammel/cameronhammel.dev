@@ -43,8 +43,8 @@ let coords = spring(
 );
 </script>
 
-<div id="fp-about" class="flex min-h-svh w-full flex-col bg-white">
-	<div class="flex flex-row items-center justify-center overflow-x-hidden bg-white sm:justify-end">
+<div id="fp-about" class="flex min-h-svh w-full flex-col bg-white dark:bg-gray-900">
+	<div class="flex flex-row items-center justify-center overflow-x-hidden bg-white dark:bg-gray-900 sm:justify-end">
 		{#if mounted}
 			<div
 				class="p-2 sm:p-6"
@@ -77,12 +77,12 @@ let coords = spring(
 		<div class="flex flex-col-reverse items-center sm:mx-4 sm:flex-row sm:justify-center">
 			<div class="my-1 flex flex-col items-center sm:items-start">
 				<h1
-					class="text-center text-[clamp(24px,10svh,48px)] leading-none tracking-normal text-white [text-transform:none;] sm:text-start sm:text-7xl md:text-8xl"
+					class="text-center text-[clamp(24px,10svh,48px)] leading-none tracking-normal text-white dark:text-gray-900 [text-transform:none;] sm:text-start sm:text-7xl md:text-8xl"
 				>
 					Hi, I'm<br />Cameron.
 				</h1>
 				<p
-					class="mt-4 max-w-[80%] text-center font-medium text-white sm:max-w-xl sm:text-left sm:text-lg md:text-xl"
+					class="mt-4 max-w-[80%] text-center font-medium text-white dark:text-gray-900 sm:max-w-xl sm:text-left sm:text-lg md:text-xl"
 				>
 					I'm a software engineer based in Toronto 🇨🇦
 					<br /> I build cutting edge web and mobile applications using modern frameworks such as
@@ -90,7 +90,7 @@ let coords = spring(
 				</p>
 			</div>
 			<div
-				class="my-4 aspect-square max-w-32 overflow-clip rounded-full border-2 border-solid border-white bg-white text-center font-medium text-white shadow-sm sm:my-0 sm:max-w-64 sm:text-lg"
+				class="my-4 aspect-square max-w-32 overflow-clip rounded-full border-2 border-solid border-white dark:border-gray-900 bg-white dark:bg-gray-900 text-center font-medium text-white dark:text-gray-900 shadow-sm sm:my-0 sm:max-w-64 sm:text-lg"
 			>
 				{#if profileImage}
 					<img
@@ -111,22 +111,22 @@ let coords = spring(
 				class="glass-card col-span-full flex flex-row flex-wrap items-center justify-center gap-6 sm:col-span-3"
 			>
 				<a
-					class="block aspect-square w-8 rounded-md p-1 text-white transition-all duration-200 hover:-translate-y-1 hover:drop-shadow-md"
+					class="block aspect-square w-8 rounded-md p-1 text-white dark:text-gray-900 transition-all duration-200 hover:-translate-y-1 hover:drop-shadow-md"
 					href="https://instagram.com/cameron.hammel"
 					><InstagramIcon />
 				</a>
 				<a
-					class="block aspect-square w-8 rounded-md p-1 text-white transition-all duration-200 hover:-translate-y-1 hover:drop-shadow-md"
+					class="block aspect-square w-8 rounded-md p-1 text-white dark:text-gray-900 transition-all duration-200 hover:-translate-y-1 hover:drop-shadow-md"
 					href="https://github.com/camhammel"
 					><GitHubIcon />
 				</a>
 				<a
-					class="block aspect-square w-8 rounded-md p-1 text-white transition-all duration-200 hover:-translate-y-1 hover:drop-shadow-md"
-					href="https://linkedin.com/in/cameron-hammel"
+					class="block aspect-square w-8 rounded-md p-1 text-white dark:text-gray-900 transition-all duration-200 hover:-translate-y-1 hover:drop-shadow-md"
+					href="https://linkedin.com/in/cameron.hammel"
 					><LinkedinIcon />
 				</a>
 				<a
-					class="block aspect-square w-8 rounded-md p-1 text-white transition-all duration-200 hover:-translate-y-1 hover:drop-shadow-md"
+					class="block aspect-square w-8 rounded-md p-1 text-white dark:text-gray-900 transition-all duration-200 hover:-translate-y-1 hover:drop-shadow-md"
 					href="mailto:hello@cameronhammel.dev"
 					target="”_blank”"
 					rel="noopener"
@@ -136,13 +136,13 @@ let coords = spring(
 			<div
 				class="glass-card col-span-full flex items-center justify-center overflow-x-clip sm:col-span-3"
 			>
-				<p class="animate-infinite-scroll whitespace-nowrap font-medium text-white sm:text-lg">
+				<p class="animate-infinite-scroll whitespace-nowrap font-medium text-white dark:text-gray-900 sm:text-lg">
 					{' | ' + techStackItems.map(({ name }) => name).join(' | ')}
 				</p>
-				<p class="animate-infinite-scroll whitespace-nowrap font-medium text-white sm:text-lg">
+				<p class="animate-infinite-scroll whitespace-nowrap font-medium text-white dark:text-gray-900 sm:text-lg">
 					{' | ' + techStackItems.map(({ name }) => name).join(' | ')}
 				</p>
-				<p class="animate-infinite-scroll whitespace-nowrap font-medium text-white sm:text-lg">
+				<p class="animate-infinite-scroll whitespace-nowrap font-medium text-white dark:text-gray-900 sm:text-lg">
 					{' | ' + techStackItems.map(({ name }) => name).join(' | ')}
 				</p>
 			</div>
@@ -150,27 +150,27 @@ let coords = spring(
 				<ContributionCalendar githubData={contributionsCalendar} />
 			{/if}
 			<div class="glass-card col-span-3 flex flex-col items-center gap-8 sm:col-span-full">
-				<h5 class="text-center text-white">This Website</h5>
+				<h5 class="text-center text-white dark:text-gray-900">This Website</h5>
 				<div class="flex w-full flex-col items-center justify-center gap-8 text-center sm:flex-row">
 					<div class="flex h-full w-full flex-col items-center justify-start gap-1 sm:w-24">
-						<div class="min-h-8 w-6 text-white"><SvelteIcon /></div>
-						<p class="text-white sm:font-medium">SvelteKit</p>
+						<div class="min-h-8 w-6 text-white dark:text-gray-900"><SvelteIcon /></div>
+						<p class="text-white dark:text-gray-900 sm:font-medium">SvelteKit</p>
 					</div>
 					<div class="flex h-full w-full flex-col items-center justify-start gap-1 sm:w-24">
-						<div class="min-h-8 min-w-8 font-sans text-2xl font-bold leading-none text-white">
+						<div class="min-h-8 min-w-8 font-sans text-2xl font-bold leading-none text-white dark:text-gray-900">
 							90+
 						</div>
-						<p class="text-white sm:font-medium">Lighthouse Score</p>
+						<p class="text-white dark:text-gray-900 sm:font-medium">Lighthouse Score</p>
 					</div>
 					<div class="flex h-full w-full flex-col items-center justify-start gap-1 sm:w-24">
-						<div class="min-h-8 w-20 text-white sm:w-full"><SanityIcon /></div>
-						<p class="text-white sm:font-medium">Sanity CMS</p>
+						<div class="min-h-8 w-20 text-white dark:text-gray-900 sm:w-full"><SanityIcon /></div>
+						<p class="text-white dark:text-gray-900 sm:font-medium">Sanity CMS</p>
 					</div>
 				</div>
 			</div>
 		</div>
 		<div
-			class="3xl:absolute 3xl:bottom-12 3xl:right-4 mt-4 flex animate-bounce self-center text-white sm:mt-0 sm:self-end"
+			class="3xl:absolute 3xl:bottom-12 3xl:right-4 mt-4 flex animate-bounce self-center text-white dark:text-gray-900 sm:mt-0 sm:self-end"
 		>
 			<div class="aspect-square w-8 -rotate-90 sm:w-12"><Arrow /></div>
 		</div>

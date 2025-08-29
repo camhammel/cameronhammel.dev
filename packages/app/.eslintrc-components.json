@@ -7,6 +7,7 @@
         "ProjectTechStack": true,
         "ProjectTitle": true,
         "Quote": true,
+        "ThemeToggle": true,
         "CustomMark": true,
         "SvelteSeo": true
     }

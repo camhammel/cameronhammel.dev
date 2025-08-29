@@ -10,14 +10,14 @@ export let quote: Quote;
 <div class="w-full" id="quote-{quote._id}">
 	<div class="from-primary/60 to-primary/10 flex flex-col gap-4 rounded-md bg-gradient-to-b p-8">
 		{#if quote}
-			<div class="text-primary/60 h-16 w-16 rotate-180">
+			<div class="text-white h-16 w-16 rotate-180 dark:text-gray-900">
 				<QuoteIcon />
 			</div>
-			<p class="flex flex-1 pb-4 pt-2 font-medium italic text-neutral-800">
+			<p class="flex flex-1 pb-4 pt-2 font-medium italic text-neutral-800 dark:text-gray-100">
 				<PortableText value={quote.quote} components={{ marks: { highlight: CustomMark } }} />
 			</p>
-			<div class="flex w-full border-t-2 border-neutral-700 pt-4">
-				<caption class="text-primary text-left font-semibold">
+			<div class="flex w-full border-t-2 border-neutral-700 pt-4 dark:border-gray-300">
+				<caption class="text-primary dark:text-gray-400 text-left font-bold">
 					{quote.author}
 				</caption>
 			</div>

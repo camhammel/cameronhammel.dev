@@ -1,4 +1,10 @@
+<script lang="ts">
+	import SvelteSeo from "svelte-seo";
+	import ThemeToggle from '../../components/ThemeToggle.svelte';
+</script>
+
 <div class="h-screen w-full">
+	<ThemeToggle />
 	<slot></slot>
 </div>
 <SvelteSeo

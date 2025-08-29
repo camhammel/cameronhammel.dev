@@ -1,11 +1,12 @@
-const plugin = require('tailwindcss/plugin')
+import type { Config } from 'tailwindcss'
+import plugin from 'tailwindcss/plugin'
 
 const radialGradientPlugin = plugin(
   function ({ matchUtilities, theme }) {
     matchUtilities(
       {
         // map to bg-radient-[*]
-        'bg-gradient': value => ({
+        'bg-gradient': (value: string) => ({
           'background-image': `radial-gradient(${value},var(--tw-gradient-stops))`,
         }),
       },
@@ -22,9 +23,9 @@ const radialGradientPlugin = plugin(
 /**
  * utility class presets
  */
-function _presets() {
+function _presets(): Record<string, string> {
   const shapes = ['circle', 'ellipse'];
-  const pos = {
+  const pos: Record<string, string> = {
     c: 'center',
     t: 'top',
     b: 'bottom',
@@ -35,7 +36,7 @@ function _presets() {
     bl: 'bottom left',
     br: 'bottom right',
   };
-  let result = {};
+  let result: Record<string, string> = {};
   for (const shape of shapes)
     for (const [posName, posValue] of Object.entries(pos))
       result[`${shape}-${posName}`] = `${shape} at ${posValue}`;
@@ -43,9 +44,9 @@ function _presets() {
   return result;
 }
 
-/** @type {import('tailwindcss').Config}*/
-const config = {
+const config: Config = {
   content: ["./src/**/*.{html,js,svelte,ts}"],
+  darkMode: 'class',
 
   theme: {
     extend: {
@@ -88,4 +89,4 @@ const config = {
   },
 };
 
-module.exports = config;
+export default config;

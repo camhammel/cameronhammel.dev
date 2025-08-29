@@ -42,7 +42,7 @@ $: hasMounted && handleResizeDebounced.call(innerWidth);
 		<div class="calendar" in:fade>
 			<ul class="days">
 				{#each ['S', 'M', 'T', 'W', 'T', 'F', 'S'] as day}
-					<li class="text-center text-xs font-bold text-white">{day}</li>
+					<li class="text-center text-xs font-bold text-white dark:text-gray-900">{day}</li>
 				{/each}
 			</ul>
 			<ul class="squares">
@@ -88,18 +88,18 @@ $: hasMounted && handleResizeDebounced.call(innerWidth);
 }
 
 .level-0 {
-	@apply bg-white opacity-25;
+	@apply bg-white dark:bg-gray-900 opacity-25;
 }
 .level-1 {
-	@apply bg-white opacity-55;
+	@apply bg-white dark:bg-gray-900 opacity-55;
 }
 .level-2 {
-	@apply bg-white opacity-70;
+	@apply bg-white dark:bg-gray-900 opacity-70;
 }
 .level-3 {
-	@apply bg-white opacity-85;
+	@apply bg-white dark:bg-gray-900 opacity-85;
 }
 .level-4 {
-	@apply bg-white;
+	@apply bg-white dark:bg-gray-900;
 }
 </style>

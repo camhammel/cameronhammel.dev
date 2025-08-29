@@ -62,7 +62,7 @@ $: flyOptions = {
 						/>
 					</div>
 				{/if}
-				<div class={textContainerClass} in:fly={flyOptions}>
+				<div class={textContainerClass + " text-gray-900 dark:text-white"} in:fly={flyOptions}>
 					<div class="mx-auto max-w-full sm:mx-0">
 						<PortableText
 							value={section.content}

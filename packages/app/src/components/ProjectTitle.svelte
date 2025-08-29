@@ -52,7 +52,7 @@ const isActivePage = $page.url.pathname === `/projects/${project.slug}`;
 			<div class="bg-primary relative pb-12 pt-8">
 				<a
 					href="/#fp-experience"
-					class="hover:bg-primary-dark absolute left-5 top-14 z-10 w-12 rounded-md p-2 text-white transition-colors duration-300 sm:left-10"
+					class="hover:bg-white/30 absolute left-5 top-14 z-10 w-12 rounded-md p-2 text-white transition-colors duration-300 sm:left-10"
 				>
 					<Arrow />
 				</a>

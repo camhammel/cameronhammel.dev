@@ -2,7 +2,7 @@
 import { afterNavigate, beforeNavigate } from '$app/navigation';
 import type { Quote } from '$lib/types/project';
 import Testimonial from '../../components/Quote.svelte';
-
+import AboutMe from '../../components/AboutMe.svelte';
 import ProjectTitle from '../../components/ProjectTitle.svelte';
 
 export let data;
@@ -39,10 +39,10 @@ $: quotes = (data.projects?.flatMap((project) => project.quotes) ?? []).filter(B
 	/>
 	<div
 		id="fp-experience"
-		class="flex w-full flex-col items-center justify-center bg-white px-8 py-32"
+		class="flex w-full flex-col items-center justify-center bg-white dark:bg-gray-900 px-8 py-32"
 	>
 		{#if data.projects?.length}
-			<h2 class="overflow-x-hidden text-center text-[clamp(1.5rem,4vw,2rem)] sm:text-left">
+			<h2 class="overflow-x-hidden text-center text-[clamp(1.5rem,4vw,2rem)] text-gray-900 dark:text-white sm:text-left">
 				Experience
 			</h2>
 			<ul class="grid w-full auto-cols-fr grid-flow-row auto-rows-fr justify-evenly gap-4">
@@ -56,9 +56,9 @@ $: quotes = (data.projects?.flatMap((project) => project.quotes) ?? []).filter(B
 			<p>No projects found.</p>
 		{/if}
 	</div>
-	<div id="fp-quotes" class="flex w-full flex-col items-center justify-center bg-white px-8 py-32">
+	<div id="fp-quotes" class="flex w-full flex-col items-center justify-center bg-white dark:bg-gray-900 px-8 py-32">
 		{#if data.projects?.length}
-			<h2 class="overflow-x-hidden text-center text-[clamp(1.5rem,4vw,2rem)] sm:text-left">
+			<h2 class="overflow-x-hidden text-center text-[clamp(1.5rem,4vw,2rem)] text-gray-900 dark:text-white sm:text-left">
 				Testimonials
 			</h2>
 			<ul class="w-full columns-1 gap-4 sm:columns-2">

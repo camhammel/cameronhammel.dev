@@ -10,6 +10,7 @@ declare global {
     const ProjectTitle: typeof import("./components/ProjectTitle.svelte")["default"]
     const Quote: typeof import("./components/Quote.svelte")["default"]
     const SvelteSeo: typeof import("svelte-seo")["default"]
+    const ThemeToggle: typeof import("./components/ThemeToggle.svelte")["default"]
 }
 
 export {}

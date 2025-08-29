@@ -84,7 +84,7 @@ let loaded = false;
 </script>
 
 <div
-	class="project-details relative flex max-w-full flex-col overflow-hidden bg-white"
+	class="project-details relative flex max-w-full flex-col overflow-visible bg-white dark:bg-gray-900"
 	style="--color-primary: {colourset.main.rgb}; --color-primary-light: {colourset.light
 		.rgb}; --color-primary-lighter: {colourset.lighter.rgb}; --color-primary-dark: {colourset.dark
 		.rgb};"
@@ -93,7 +93,7 @@ let loaded = false;
 		<ProjectTitle project={project} />
 		{#if ready}
 			<div
-				class="relative bottom-12 z-10 -mb-12 flex-1 gap-4 rounded-3xl bg-white p-4"
+				class="relative bottom-12 z-10 -mb-12 flex-1 gap-4 rounded-3xl bg-white dark:bg-gray-800 p-4"
 				transition:fly={{ duration: 750, delay: 200, y: 200, easing: cubicOut, opacity: 1 }}
 			>
 				<div class="col-span-3 mx-auto max-w-screen-2xl">
@@ -125,7 +125,7 @@ let loaded = false;
 						</IntersectionObserver>
 						<div class="m-4 grid grid-cols-4 gap-4">
 							<div
-								class="col-span-4 flex flex-col gap-8 rounded-md bg-[#fff] px-8 py-4 sm:col-span-3"
+								class="col-span-4 flex flex-col gap-8 rounded-md bg-[#fff] dark:bg-gray-700 px-8 py-4 sm:col-span-3"
 							>
 								{#if project.sections?.length}
 									{#each project.sections as section, index}
